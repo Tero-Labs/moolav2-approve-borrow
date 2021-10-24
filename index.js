@@ -37,9 +37,27 @@ const reserves = {
 
 async function approveDelegationForExternalContract(){
     const reserveTokensMCUSD = await dataProvider.methods.getReserveTokensAddresses(reserves.cusd).call();
+    const reserveTokensMCEUR = await dataProvider.methods.getReserveTokensAddresses(reserves.ceur).call();
+    const reserveTokensMCELO = await dataProvider.methods.getReserveTokensAddresses(reserves.celo).call();
+    // console.log(reserveTokensMCUSD);
     const debtTokenMCUSD = new eth.Contract(DebtToken, reserveTokensMCUSD.variableDebtTokenAddress);
-    const txHash = await debtTokenMCUSD.methods.approveDelegation("0xE6df18D52c18676df77C9c91Ca53Eae4EaE4b2e1", maxUint256).send({from: user, gas: 2000000}).transactionHash;
-    console.log(txHash);
+    const debtTokenMCEUR = new eth.Contract(DebtToken, reserveTokensMCEUR.variableDebtTokenAddress);
+    const debtTokenMCELO = new eth.Contract(DebtToken, reserveTokensMCELO.variableDebtTokenAddress);
+
+    const debtStableTokenMCUSD = new eth.Contract(DebtToken, reserveTokensMCUSD.stableDebtTokenAddress);
+    const debtStableTokenMCEUR = new eth.Contract(DebtToken, reserveTokensMCEUR.stableDebtTokenAddress);
+    const debtStableTokenMCELO = new eth.Contract(DebtToken, reserveTokensMCELO.stableDebtTokenAddress);
+
+    // deployedContractAddress => address of deployed contract calling the borrow function
+    const  deployedContractAddress = "0xE6df18D52c18676df77C9c91Ca53Eae4EaE4b2e1"
+    await debtTokenMCUSD.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await debtTokenMCEUR.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await debtTokenMCELO.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+
+    await debtStableTokenMCUSD.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await debtStableTokenMCEUR.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await debtStableTokenMCELO.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+
 }
 
 approveDelegationForExternalContract();
