@@ -10,17 +10,16 @@ const path = require('path')
 const maxUint256 = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
 const filePath = path.join(__dirname, './.secret')
 
+
+const pk = fs.readFileSync(filePath, {encoding:'utf8', flag:'r'});
+console.log("Private key");
+console.log(pk);
 kit = newKit('https://alfajores-forno.celo-testnet.org');
 const web3 = kit.web3;
 const eth = web3.eth;
 
 const user = "0x9AE3333A26511BABf437F38f7f5c879D7cE7bB92";
 
-const pk = "b1746c0133b5e1d696fda2d98d3c240fcf96ddaeeddd688b86baab2e53111a12";
-// if (!pk) {
-//         console.error('Missing private key');
-//         return;
-// }
 kit.addAccount(pk);
 
 dataProvider = new kit.web3.eth.Contract(DataProvider, '0x31ccB9dC068058672D96E92BAf96B1607855822E');
