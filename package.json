@@ -1,0 +1,14 @@
+{
+  "name": "frommoolav2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tahlil",
+  "license": "ISC",
+  "dependencies": {
+    "@celo/contractkit": "^1.3.1"
+  }
+}

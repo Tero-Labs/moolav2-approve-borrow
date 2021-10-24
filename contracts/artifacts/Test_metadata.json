@@ -1,0 +1,100 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRateMode",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint16",
+						"name": "referralCode",
+						"type": "uint16"
+					},
+					{
+						"internalType": "address",
+						"name": "onBehalfOf",
+						"type": "address"
+					}
+				],
+				"name": "borrow",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Test.sol": "Test"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Test.sol": {
+			"keccak256": "0x239d668eec0e662cc498ad8f906551c79a7e9e3cc01ba7ba55b1090e4b8456a2",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://de5974754c36546f485744615d5b379533a53637d398b1df10dec2f8d67859a7",
+				"dweb:/ipfs/Qma9rHfRuqjskYCfNrztsKKBLUrkLdvYRhzHD2qzmwKpZm"
+			]
+		},
+		"contracts/interfaces/ILendingPool.sol": {
+			"keccak256": "0xcd36d4aa82b9193b5349d4f54d401ebff90c3ada6f4f33acf286a1b258b98614",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://54a877f0fd6eb9375bb21aea312c1f1194df7485bfb080722493aa766b6ea833",
+				"dweb:/ipfs/Qmanfp7Nfi7rDCY8FxMVq7FBSCQVpShLJK3YDBAf91TAG3"
+			]
+		},
+		"contracts/lib/DataTypes.sol": {
+			"keccak256": "0xf645d3e560cec23f2e1c0367e474efa9db1e85fda88bc54fec7a925366a93540",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://e60e7eb473dfcf2e762d1cb08d6cd00608d2e50410368d07fa3be5e14dd2d8ed",
+				"dweb:/ipfs/QmWY2YwVS4ViqeRkjQkwTHdZANsdAitDdhbzHvafdg3HyR"
+			]
+		}
+	},
+	"version": 1
+}
