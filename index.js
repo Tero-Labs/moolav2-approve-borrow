@@ -60,6 +60,6 @@ async function approveDelegationForExternalContract(){
 
 }
 
-// approveDelegationForExternalContract();
+approveDelegationForExternalContract();
 
 
