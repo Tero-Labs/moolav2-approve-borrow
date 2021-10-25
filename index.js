@@ -48,6 +48,7 @@ async function approveDelegationForExternalContract(){
     const debtStableTokenMCELO = new eth.Contract(DebtToken, reserveTokensMCELO.stableDebtTokenAddress);
 
     // deployedContractAddress => address of deployed contract calling the borrow function
+    // ** replace the value for deployedContractAddress variable ** 
     const  deployedContractAddress = "0xE6df18D52c18676df77C9c91Ca53Eae4EaE4b2e1"
     await debtTokenMCUSD.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
     await debtTokenMCEUR.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
