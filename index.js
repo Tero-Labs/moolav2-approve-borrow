@@ -18,7 +18,7 @@ kit = newKit('https://alfajores-forno.celo-testnet.org');
 const web3 = kit.web3;
 const eth = web3.eth;
 
-const user = "0x9AE3333A26511BABf437F38f7f5c879D7cE7bB92";
+const user = eth.accounts.privateKeyToAccount(pk).address;
 
 kit.addAccount(pk);
 
@@ -59,6 +59,6 @@ async function approveDelegationForExternalContract(){
 
 }
 
-approveDelegationForExternalContract();
+// approveDelegationForExternalContract();
 
 
