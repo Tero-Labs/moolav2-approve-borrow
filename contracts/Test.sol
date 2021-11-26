@@ -5,7 +5,7 @@ import './interfaces/ILendingPool.sol';
 
 contract Test{
 
-    constructor() public{
+    constructor() public {
        
     }
 
@@ -14,6 +14,6 @@ contract Test{
     }
 
     function repay(address asset, uint256 amount, uint256 interestRateMode, address onBehalfOf) external{
-        lendingPool.repay(asset, amount, interestRateMode, onBehalfOf);
+        ILendingPool(0x58ad305f1eCe49ca55ADE0D5cCC90114C3902E88).repay(asset, amount, interestRateMode, onBehalfOf);
     }
 }

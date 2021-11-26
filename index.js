@@ -49,7 +49,8 @@ async function approveDelegationForExternalContract(){
 
     // deployedContractAddress => address of deployed contract calling the borrow function
     // ** replace the value for deployedContractAddress variable ** 
-    const  deployedContractAddress = "0xE6df18D52c18676df77C9c91Ca53Eae4EaE4b2e1"
+    const  deployedContractAddress = "0x636DA99BbEE26B82a5EA64d3C77fe4772DaC7d24"
+    const  deployedContractAddress = "0x58ad305f1eCe49ca55ADE0D5cCC90114C3902E88"
     await debtTokenMCUSD.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
     await debtTokenMCEUR.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
     await debtTokenMCELO.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
@@ -57,6 +58,10 @@ async function approveDelegationForExternalContract(){
     await debtStableTokenMCUSD.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
     await debtStableTokenMCEUR.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
     await debtStableTokenMCELO.methods.approveDelegation(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+
+    await cUSD.methods.approve(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await cEUR.methods.approve(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
+    await CELO.methods.approve(deployedContractAddress, maxUint256).send({from: user, gas: 2000000});
 
 }
 
